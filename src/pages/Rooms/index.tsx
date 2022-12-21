@@ -60,7 +60,9 @@ const RoomsPage = () => {
           <p>
             <span>${currentPlace?.price}</span> /night
           </p>
-          <Button onClick={() => {}}>Book Now!</Button>
+          <Button onClick={() => {}} size='small'>
+            Book Now!
+          </Button>
         </DesktopBookingContainner>
       </GalleryDetailsWrapper>
 
@@ -68,7 +70,9 @@ const RoomsPage = () => {
         <p>
           <span>${currentPlace?.price}</span> /night
         </p>
-        <Button onClick={() => {}}>Book Now!</Button>
+        <Button onClick={() => {}} size='small'>
+          Book Now!
+        </Button>
       </RoomPageFooter>
     </Container>
   )

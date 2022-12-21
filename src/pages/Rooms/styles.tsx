@@ -5,7 +5,7 @@ export const Container = styled.div`
   max-width: 1120px;
   margin: 0 auto;
   overflow: hidden;
-  padding-bottom: 110px;
+  padding-bottom: 90px;
 
   > img {
     width: auto;
