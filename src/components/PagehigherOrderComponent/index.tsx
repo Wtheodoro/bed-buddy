@@ -1,16 +1,17 @@
 import React from 'react'
-import { ComponentWrapper, Layout, NavWrapper, HeaderWrapper } from './styles'
+import Header from '../Header'
+import { ComponentWrapper, Layout, HeaderWrapper } from './styles'
 
 const PagehigherOrderComponent = (Component: React.ComponentType) => () => {
   return (
     <Layout>
-      <HeaderWrapper>HEADER</HeaderWrapper>
+      <HeaderWrapper>
+        <Header userName='Walison' />
+      </HeaderWrapper>
 
       <ComponentWrapper>
         <Component />
       </ComponentWrapper>
-
-      <NavWrapper>NAVBAR</NavWrapper>
     </Layout>
   )
 }

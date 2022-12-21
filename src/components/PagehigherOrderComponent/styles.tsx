@@ -10,15 +10,6 @@ export const HeaderWrapper = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  background: red;
 `
 
 export const ComponentWrapper = styled.div``
-
-export const NavWrapper = styled.div`
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: red;
-`
