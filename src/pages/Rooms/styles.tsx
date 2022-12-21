@@ -29,7 +29,7 @@ export const CoverImage = styled.div<ICoverImage>`
 
 export const InfoWrapper = styled.div``
 
-export const DesktopImageGridWrapper = styled.div`
+export const DesktopImageGridWrapper = styled.section`
   display: none;
 
   @media (min-width: 768px) {
@@ -38,7 +38,7 @@ export const DesktopImageGridWrapper = styled.div`
   }
 `
 
-export const NameLocationWrapper = styled.div`
+export const NameLocationWrapper = styled.section`
   margin: 20px;
   padding-bottom: 40px;
   border-bottom: 1px solid black;
@@ -63,7 +63,7 @@ export const NameLocationWrapper = styled.div`
   }
 `
 
-export const GalleryDetailsWrapper = styled.div`
+export const GalleryDetailsWrapper = styled.section`
   position: relative;
   margin: 20px;
   padding: 150px 0 40px 0;
@@ -143,5 +143,21 @@ export const DesktopBookingContainner = styled.div`
       font-weight: 700;
       color: #1ab65c;
     }
+  }
+`
+export const NavWrapper = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    font-weight: 700;
+    font-size: 24px;
+  }
+
+  svg {
+    width: 28px;
+    height: 28px;
+    margin-right: 20px;
   }
 `

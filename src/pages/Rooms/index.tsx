@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import PagehigherOrderComponent from '../../components/PagehigherOrderComponent'
 import MOCK_PLACES from '../../constants/places'
 import {
@@ -12,8 +12,10 @@ import {
   DesktopImageGridWrapper,
   MedediaMatch,
   DesktopBookingContainner,
+  NavWrapper,
 } from './styles'
 import { MdLocationOn } from 'react-icons/md'
+import { BiArrowBack } from 'react-icons/bi'
 import {
   Button,
   DesktopImagesGrid,
@@ -23,6 +25,9 @@ import {
 
 const RoomsPage = () => {
   const params = useParams()
+  const navigate = useNavigate()
+
+  const handleBackToHome = () => navigate('/home')
 
   const currentPlace = MOCK_PLACES.find(
     (place) => place.id === Number(params.id)
@@ -65,6 +70,10 @@ const RoomsPage = () => {
           </Button>
         </DesktopBookingContainner>
       </GalleryDetailsWrapper>
+
+      <NavWrapper onClick={handleBackToHome}>
+        <BiArrowBack /> <span>Back to Home</span>
+      </NavWrapper>
 
       <RoomPageFooter>
         <p>
