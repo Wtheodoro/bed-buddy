@@ -8,14 +8,11 @@ import {
   StarIconWrapper,
 } from './styles'
 import { RiStarSFill } from 'react-icons/ri'
+import { IPlace } from '../../types/placeType'
 
-interface IPlaceCard {
-  name: string
-  location: string
-  price: number
-  rate: number
-  backgroundImageUrl: string
-}
+type IPlaceCard = {
+  onClick: () => void
+} & IPlace
 
 const PlaceCard: React.FC<IPlaceCard> = ({
   name,
@@ -23,9 +20,10 @@ const PlaceCard: React.FC<IPlaceCard> = ({
   price,
   rate,
   backgroundImageUrl,
+  onClick,
 }) => {
   return (
-    <Container backgroundImageUrl={backgroundImageUrl}>
+    <Container backgroundImageUrl={backgroundImageUrl} onClick={onClick}>
       <InfoWrapper>
         <CardName>{name}</CardName>
         <CardLocation>{location}</CardLocation>
