@@ -82,11 +82,10 @@ export const GalleryDetailsWrapper = styled.div`
 export const RoomPageFooter = styled.footer`
   position: fixed;
   right: 0;
-  bottom: 10px;
+  bottom: 0px;
   left: 0;
   width: 100%;
-  height: 70px;
-  padding: 0 20px;
+  padding: 20px 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
