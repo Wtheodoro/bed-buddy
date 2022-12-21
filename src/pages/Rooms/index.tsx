@@ -7,9 +7,11 @@ import {
   NameLocationWrapper,
   InfoWrapper,
   GalleryDetailsWrapper,
+  RoomPageFooter,
+  CoverImage,
 } from './styles'
 import { MdLocationOn } from 'react-icons/md'
-import { Gallery, RoomDetails } from '../../components'
+import { Button, Gallery, RoomDetails } from '../../components'
 
 const RoomsPage = () => {
   const params = useParams()
@@ -21,7 +23,8 @@ const RoomsPage = () => {
   console.log(currentPlace)
   return (
     <Container>
-      <img src={currentPlace?.backgroundImageUrl} alt={currentPlace?.name} />
+      {/* <img src={currentPlace?.backgroundImageUrl} alt={currentPlace?.name} /> */}
+      <CoverImage src={currentPlace?.backgroundImageUrl!} />
 
       <NameLocationWrapper>
         <InfoWrapper>
@@ -37,6 +40,13 @@ const RoomsPage = () => {
         <Gallery imageUrls={currentPlace?.previewImagesUrl} />
         <RoomDetails />
       </GalleryDetailsWrapper>
+
+      <RoomPageFooter>
+        <p>
+          <span>${currentPlace?.price}</span> /night
+        </p>
+        <Button onClick={() => {}}>Book Now!</Button>
+      </RoomPageFooter>
     </Container>
   )
 }
