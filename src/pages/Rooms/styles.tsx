@@ -63,8 +63,9 @@ export const NameLocationWrapper = styled.div`
 `
 
 export const GalleryDetailsWrapper = styled.div`
+  position: relative;
   margin: 20px;
-  padding-bottom: 40px;
+  padding: 150px 0 40px 0;
   border-bottom: 1px solid black;
 
   > div + div {
@@ -103,6 +104,26 @@ export const RoomPageFooter = styled.footer`
 `
 
 export const MedediaMatch = styled.div`
+  > div:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100vw;
+    margin: -20px;
+
+    > p {
+      margin-left: 20px;
+    }
+
+    > div img:first-child {
+      margin-left: 20px;
+    }
+
+    > div img:last-child {
+      margin-right: 20px;
+    }
+  }
+
   @media (min-width: 768px) {
     width: 48%;
   }

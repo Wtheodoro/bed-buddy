@@ -13,14 +13,12 @@ export const ImagesWrapper = styled.div`
   display: flex;
   width: 100%;
   overflow-x: scroll;
-  scroll-snap-type: x mandatory;
 
   > img {
-    width: 136px;
+    min-width: 136px;
     height: 107px;
+    object-fit: fill;
     border-radius: 12px;
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
   }
 
   > img + img {
