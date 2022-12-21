@@ -15,12 +15,12 @@ const RoomDetails = () => {
 
         <ItemWrapper>
           <FaBed />
-          <p>Bedrooms</p>
+          <p>3 Bedrooms</p>
         </ItemWrapper>
 
         <ItemWrapper>
           <FaBath />
-          <p>Bathrooms</p>
+          <p>2 Bathrooms</p>
         </ItemWrapper>
 
         <ItemWrapper>
