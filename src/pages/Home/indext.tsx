@@ -6,11 +6,19 @@ import 'react-date-range/dist/theme/default.css'
 import { Container, PlaceCardsWrapper } from './styles'
 import { PlaceCard } from '../../components'
 import MOCK_PLACES from '../../constants/places'
+import { useNavigate } from 'react-router-dom'
+import { IPlace } from '../../types/placeType'
 
 const HomePage = () => {
   const [startDate, setStartDate] = useState(new Date())
   const [endDate, setEndDate] = useState(new Date())
   const [numberOfGuests, setNumberOfGuests] = useState(2)
+
+  const navigate = useNavigate()
+
+  const handlePlaceClick = (choosenPlace: IPlace) => {
+    navigate(`/rooms/${choosenPlace.id}/${choosenPlace.name}`)
+  }
 
   const selectionRange = {
     startDate,
@@ -39,7 +47,11 @@ const HomePage = () => {
 
       <PlaceCardsWrapper>
         {MOCK_PLACES.map((place) => (
-          <PlaceCard key={place.id} {...place} />
+          <PlaceCard
+            key={place.id}
+            {...place}
+            onClick={() => handlePlaceClick(place)}
+          />
         ))}
       </PlaceCardsWrapper>
     </Container>

@@ -5,6 +5,7 @@ export const Container = styled.div`
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 10px;
+    letter-spacing: 0.2px;
   }
 `
 
