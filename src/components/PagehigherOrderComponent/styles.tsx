@@ -12,4 +12,6 @@ export const HeaderWrapper = styled.div`
   right: 0;
 `
 
-export const ComponentWrapper = styled.div``
+export const ComponentWrapper = styled.div`
+  padding-top: 60px;
+`

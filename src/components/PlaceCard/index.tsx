@@ -10,22 +10,32 @@ import {
 import { RiStarSFill } from 'react-icons/ri'
 
 interface IPlaceCard {
+  name: string
+  location: string
+  price: number
+  rate: number
   backgroundImageUrl: string
 }
 
-const PlaceCard: React.FC<IPlaceCard> = ({ backgroundImageUrl }) => {
+const PlaceCard: React.FC<IPlaceCard> = ({
+  name,
+  location,
+  price,
+  rate,
+  backgroundImageUrl,
+}) => {
   return (
     <Container backgroundImageUrl={backgroundImageUrl}>
       <InfoWrapper>
-        <CardName>Intercontinental Hotel</CardName>
-        <CardLocation>Lagos, Nigeria</CardLocation>
+        <CardName>{name}</CardName>
+        <CardLocation>{location}</CardLocation>
         <CardPrice>
-          <span>$205</span> /night
+          <span>${price}</span> /night
         </CardPrice>
       </InfoWrapper>
 
       <StarIconWrapper>
-        <RiStarSFill /> <span>5.0</span>
+        <RiStarSFill /> <span>{rate}</span>
       </StarIconWrapper>
     </Container>
   )

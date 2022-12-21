@@ -6,8 +6,8 @@ interface IContainer {
 
 export const Container = styled.div<IContainer>`
   position: relative;
-  width: 268px;
-  height: 336px;
+  min-width: 268px;
+  min-height: 336px;
   display: flex;
   align-items: flex-end;
   border-radius: 24px;
