@@ -14,4 +14,5 @@ export const HeaderWrapper = styled.div`
 
 export const ComponentWrapper = styled.div`
   padding-top: 60px;
+  background: #f8faff;
 `
