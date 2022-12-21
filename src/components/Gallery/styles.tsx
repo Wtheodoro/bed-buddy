@@ -17,7 +17,7 @@ export const ImagesWrapper = styled.div`
   > img {
     min-width: 136px;
     height: 107px;
-    object-fit: fill;
+    object-fit: cover;
     border-radius: 12px;
   }
 

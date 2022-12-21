@@ -11,7 +11,7 @@ export const Container = styled.div`
   > img {
     width: 560px;
     height: 310px;
-    object-fit: fill;
+    object-fit: cover;
     margin-right: 10px;
   }
 
@@ -24,6 +24,6 @@ export const Container = styled.div`
   > div img {
     width: 272px;
     height: 150px;
-    object-fit: fill;
+    object-fit: cover;
   }
 `
