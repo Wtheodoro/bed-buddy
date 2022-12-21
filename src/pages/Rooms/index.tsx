@@ -9,9 +9,17 @@ import {
   GalleryDetailsWrapper,
   RoomPageFooter,
   CoverImage,
+  DesktopImageGridWrapper,
+  MedediaMatch,
+  DesktopBookingContainner,
 } from './styles'
 import { MdLocationOn } from 'react-icons/md'
-import { Button, Gallery, RoomDetails } from '../../components'
+import {
+  Button,
+  DesktopImagesGrid,
+  Gallery,
+  RoomDetails,
+} from '../../components'
 
 const RoomsPage = () => {
   const params = useParams()
@@ -23,7 +31,6 @@ const RoomsPage = () => {
   console.log(currentPlace)
   return (
     <Container>
-      {/* <img src={currentPlace?.backgroundImageUrl} alt={currentPlace?.name} /> */}
       <CoverImage src={currentPlace?.backgroundImageUrl!} />
 
       <NameLocationWrapper>
@@ -36,9 +43,25 @@ const RoomsPage = () => {
         </InfoWrapper>
       </NameLocationWrapper>
 
+      <DesktopImageGridWrapper>
+        <DesktopImagesGrid
+          mainImageUrl={currentPlace?.backgroundImageUrl!}
+          previewImageUrls={currentPlace?.previewImagesUrl!}
+        />
+      </DesktopImageGridWrapper>
+
       <GalleryDetailsWrapper>
-        <Gallery imageUrls={currentPlace?.previewImagesUrl} />
-        <RoomDetails />
+        <MedediaMatch>
+          <Gallery imageUrls={currentPlace?.previewImagesUrl} />
+          <RoomDetails />
+        </MedediaMatch>
+
+        <DesktopBookingContainner>
+          <p>
+            <span>${currentPlace?.price}</span> /night
+          </p>
+          <Button onClick={() => {}}>Book Now!</Button>
+        </DesktopBookingContainner>
       </GalleryDetailsWrapper>
 
       <RoomPageFooter>

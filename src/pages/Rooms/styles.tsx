@@ -2,13 +2,12 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   width: 100vw;
+  max-width: 1120px;
+  margin: 0 auto;
   overflow: hidden;
 
   > img {
-    /* max-width: 100%; */
-    /* max-height: 284px; */
     width: auto;
-    /* height: auto; */
   }
 `
 interface ICoverImage {
@@ -21,9 +20,22 @@ export const CoverImage = styled.div<ICoverImage>`
   background-image: ${(props) => `url(${props.src})`};
   background-size: cover;
   background-position: center;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `
 
 export const InfoWrapper = styled.div``
+
+export const DesktopImageGridWrapper = styled.div`
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+    padding: 20px;
+  }
+`
 
 export const NameLocationWrapper = styled.div`
   margin: 20px;
@@ -58,6 +70,12 @@ export const GalleryDetailsWrapper = styled.div`
   > div + div {
     margin-top: 20px;
   }
+
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
 `
 
 export const RoomPageFooter = styled.footer`
@@ -77,5 +95,32 @@ export const RoomPageFooter = styled.footer`
     font-size: 22px;
     font-weight: 700;
     color: #1ab65c;
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+`
+
+export const MedediaMatch = styled.div`
+  @media (min-width: 768px) {
+    width: 48%;
+  }
+`
+
+export const DesktopBookingContainner = styled.div`
+  display: none;
+
+  @media (min-width: 768px) {
+    width: 48%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    span {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1ab65c;
+    }
   }
 `
