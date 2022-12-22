@@ -9,6 +9,7 @@ import {
 } from './styles'
 import { RiStarSFill } from 'react-icons/ri'
 import { IPlace } from '../../types/placeType'
+import StarRate from '../StarRate'
 
 type IPlaceCard = {
   onClick: () => void
@@ -33,7 +34,7 @@ const PlaceCard: React.FC<IPlaceCard> = ({
       </InfoWrapper>
 
       <StarIconWrapper>
-        <RiStarSFill /> <span>{rate}</span>
+        <StarRate rate={rate} />
       </StarIconWrapper>
     </Container>
   )
