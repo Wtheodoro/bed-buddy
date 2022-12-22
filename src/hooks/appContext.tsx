@@ -7,6 +7,7 @@ interface IAppContext {
   places: IPlace[]
   bookings: IBooking[]
   addBooking: (newBooking: IBooking) => void
+  editBooking: (newBooking: IBooking) => void
   removeBooking: (newBooking: IBooking) => void
 }
 
@@ -32,6 +33,16 @@ const AppProvider: React.FC<IAppProvider> = ({ children }) => {
     setBookingsInStateAndLocalstorage(updatedBookings)
   }
 
+  const editBooking = (editedBooking: IBooking) => {
+    const updatedBookings = bookings
+    const editedBookIndex = bookings.findIndex(
+      (booking) => booking.id === editedBooking.id
+    )
+    updatedBookings[editedBookIndex] = editedBooking
+
+    setBookingsInStateAndLocalstorage(updatedBookings)
+  }
+
   const removeBooking = (currentBooking: IBooking) => {
     const updatedBookings = bookings.filter(
       (booking) => booking.id !== currentBooking.id
@@ -47,7 +58,7 @@ const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 
   return (
     <AppContext.Provider
-      value={{ places, bookings, addBooking, removeBooking }}
+      value={{ places, bookings, addBooking, editBooking, removeBooking }}
     >
       {children}
     </AppContext.Provider>

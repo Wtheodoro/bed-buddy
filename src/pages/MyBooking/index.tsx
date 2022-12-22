@@ -14,8 +14,10 @@ const MyBookinPage = () => {
     removeBooking(booking)
   }
 
-  const handleViewClick = (id: number, name: string) =>
-    navigate(`/rooms/${id}/${name}`)
+  const handleEditClick = (bookId: string) => navigate(`/bookEdit/${bookId}`)
+
+  const handleViewClick = (placeId: number, placeName: string) =>
+    navigate(`/rooms/${placeId}/${placeName}`)
 
   return (
     <Container>
@@ -25,7 +27,7 @@ const MyBookinPage = () => {
           {...booking}
           name={booking.placeName}
           onCancel={() => handleCancelClick(booking)}
-          onEdit={() => {}}
+          onEdit={() => handleEditClick(booking.id)}
           onView={() => handleViewClick(booking.placeId, booking.placeName)}
         />
       ))}

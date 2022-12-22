@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, BrowserRouter, Routes } from 'react-router-dom'
 import BookNowPage from '../pages/BookNow'
+import BookEditPage from '../pages/BookEdit'
 import HomePage from '../pages/Home'
 import MyBookinPage from '../pages/MyBooking'
 import RoomsPage from '../pages/Rooms'
@@ -15,6 +16,7 @@ const AppRoutes: React.FC = () => {
         <Route path='/myBooking' element={<MyBookinPage />} />
         <Route path='/rooms/:id/:name' element={<RoomsPage />} />
         <Route path='/bookNow/:id/:name' element={<BookNowPage />} />
+        <Route path='bookEdit/:id' element={<BookEditPage />} />
       </Routes>
     </BrowserRouter>
   )
