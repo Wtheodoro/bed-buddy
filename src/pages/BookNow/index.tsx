@@ -98,7 +98,7 @@ const BookNowPage = () => {
         dayContentRenderer={(param) => customDayContent(param, bookedDates)}
       />
 
-      {!!bookings.length && <p>Days marked in Orange ar already booked</p>}
+      {!!bookings.length && <p>Days marked in Orange are already booked</p>}
 
       <GuestWrapper>
         <h2>Guests</h2>

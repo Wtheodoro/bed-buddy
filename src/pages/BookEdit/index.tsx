@@ -104,6 +104,8 @@ const BookEditPage = () => {
         }
       />
 
+      {!!bookings.length && <p>Days marked in Orange are already booked</p>}
+
       <GuestWrapper>
         <h2>Guests</h2>
         <AddGuest
