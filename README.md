@@ -4,9 +4,9 @@
 
 This web app was built focused on mobile layout.
 
-Check the deploy [`preview`]('https://github.com/Wtheodoro/bed-buddy/blob/main/public/preview/bed-buddy-preview.png')
+Check the deploy [`preview`](https://www.bed-buddy.walisontsx.com/)
 
-![Preview](https://github.com/Wtheodoro/frosty-weather-app/blob/main/public/gif/frosty-mobile-preview.gif)
+![Preview](https://github.com/Wtheodoro/bed-buddy/blob/main/public/preview/bed-buddy-preview.png)
 
 ## `Project purpose`
 
