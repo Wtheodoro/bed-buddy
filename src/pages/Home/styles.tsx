@@ -5,7 +5,6 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 22px 0;
 
   > p {
     color: #1ab65c;
