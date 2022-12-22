@@ -104,12 +104,12 @@ export const RoomPageFooter = styled.footer`
 `
 
 export const MedediaMatch = styled.div`
-  > div:nth-child(1) {
+  > div:first-child {
     position: absolute;
     top: 0;
     left: 0;
     max-width: 100vw;
-    margin: -20px;
+    margin: 0 -20px;
 
     > p {
       margin-left: 20px;

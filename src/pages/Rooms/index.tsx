@@ -22,6 +22,7 @@ import {
   Gallery,
   RoomDetails,
 } from '../../components'
+import { IPlace } from '../../types/placeType'
 
 const RoomsPage = () => {
   const params = useParams()
@@ -29,14 +30,17 @@ const RoomsPage = () => {
 
   const handleBackToHome = () => navigate('/home')
 
+  const handleBookNow = (choosenPlace: IPlace) => {
+    navigate(`/bookNow/${choosenPlace.id}/${choosenPlace.name}`)
+  }
+
   const currentPlace = MOCK_PLACES.find(
     (place) => place.id === Number(params.id)
-  )
+  )!
 
-  console.log(currentPlace)
   return (
     <Container>
-      <CoverImage src={currentPlace?.backgroundImageUrl!} />
+      <CoverImage src={currentPlace?.backgroundImageUrl} />
 
       <NameLocationWrapper>
         <InfoWrapper>
@@ -50,8 +54,8 @@ const RoomsPage = () => {
 
       <DesktopImageGridWrapper>
         <DesktopImagesGrid
-          mainImageUrl={currentPlace?.backgroundImageUrl!}
-          previewImageUrls={currentPlace?.previewImagesUrl!}
+          mainImageUrl={currentPlace?.backgroundImageUrl}
+          previewImageUrls={currentPlace?.previewImagesUrl}
         />
       </DesktopImageGridWrapper>
 
@@ -79,7 +83,7 @@ const RoomsPage = () => {
         <p>
           <span>${currentPlace?.price}</span> /night
         </p>
-        <Button onClick={() => {}} size='small'>
+        <Button onClick={() => handleBookNow(currentPlace)} size='small'>
           Book Now!
         </Button>
       </RoomPageFooter>

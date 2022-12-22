@@ -14,7 +14,7 @@ const DesktopImagesGrid: React.FC<IDesktopImagesGrid> = ({
       <img src={mainImageUrl} alt='main' />
       <div>
         {previewImageUrls.map((imageUrl) => (
-          <img src={imageUrl} alt='preview' />
+          <img key={imageUrl} src={imageUrl} alt='preview' />
         ))}
       </div>
     </Container>
