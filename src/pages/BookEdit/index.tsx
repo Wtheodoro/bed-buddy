@@ -6,7 +6,6 @@ import PagehigherOrderComponent from '../../components/PagehigherOrderComponent'
 import daysCounter from '../../helper/daysCounter'
 import { useApp } from '../../hooks/appContext'
 import { Container, GuestWrapper } from './styles'
-import uuid from 'react-uuid'
 
 const BookEditPage = () => {
   const [startDate, setStartDate] = useState<Date>(new Date())

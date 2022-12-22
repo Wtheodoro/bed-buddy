@@ -7,6 +7,7 @@ import daysCounter from '../../helper/daysCounter'
 import { useApp } from '../../hooks/appContext'
 import { Container, GuestWrapper } from './styles'
 import uuid from 'react-uuid'
+import dateRangeList from '../../helper/dateRangeList'
 
 const BookNowPage = () => {
   const [startDate, setStartDate] = useState<Date>(new Date())
@@ -15,7 +16,7 @@ const BookNowPage = () => {
 
   const params = useParams()
   const navigate = useNavigate()
-  const { places, addBooking } = useApp()
+  const { places, addBooking, bookings } = useApp()
 
   const selectionRange = {
     startDate,
@@ -45,6 +46,11 @@ const BookNowPage = () => {
   }
 
   const days = daysCounter(startDate, endDate)
+  const bookedDates = bookings
+    .map(({ startDate, endDate }) =>
+      dateRangeList(new Date(startDate), new Date(endDate))
+    )
+    .flat(1)
 
   const handleClick = () => {
     const newBooking = {
@@ -73,6 +79,7 @@ const BookNowPage = () => {
         rangeColors={['#fd5861']}
         onChange={handleSelect}
         moveRangeOnFirstSelection={false}
+        disabledDates={bookedDates}
       />
 
       <GuestWrapper>
