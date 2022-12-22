@@ -7,10 +7,6 @@ export const Container = styled.div`
   align-items: flex-start;
 
   padding: 22px 0;
-
-  .rdrDefinedRangesWrapper {
-    display: none;
-  }
 `
 
 export const PlaceCardsWrapper = styled.div`

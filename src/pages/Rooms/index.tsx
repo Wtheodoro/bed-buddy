@@ -1,7 +1,6 @@
 import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import PagehigherOrderComponent from '../../components/PagehigherOrderComponent'
-import MOCK_PLACES from '../../constants/places'
 import {
   Container,
   NameLocationWrapper,
@@ -23,10 +22,12 @@ import {
   RoomDetails,
 } from '../../components'
 import { IPlace } from '../../types/placeType'
+import { useApp } from '../../hooks/appContext'
 
 const RoomsPage = () => {
   const params = useParams()
   const navigate = useNavigate()
+  const { places } = useApp()
 
   const handleBackToHome = () => navigate('/home')
 
@@ -34,9 +35,7 @@ const RoomsPage = () => {
     navigate(`/bookNow/${choosenPlace.id}/${choosenPlace.name}`)
   }
 
-  const currentPlace = MOCK_PLACES.find(
-    (place) => place.id === Number(params.id)
-  )!
+  const currentPlace = places.find((place) => place.id === Number(params.id))!
 
   return (
     <Container>
