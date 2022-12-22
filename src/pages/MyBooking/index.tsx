@@ -1,10 +1,11 @@
 import React from 'react'
+import { BiArrowBack } from 'react-icons/bi'
 import { useNavigate } from 'react-router-dom'
 import { BookingCard } from '../../components'
 import PagehigherOrderComponent from '../../components/PagehigherOrderComponent'
 import { useApp } from '../../hooks/appContext'
 import { IBooking } from '../../types/bookingType'
-import { Container } from './styled'
+import { Container, NavWrapper } from './styled'
 
 const MyBookinPage = () => {
   const navigate = useNavigate()
@@ -19,8 +20,14 @@ const MyBookinPage = () => {
   const handleViewClick = (placeId: number, placeName: string) =>
     navigate(`/rooms/${placeId}/${placeName}`)
 
+  const handleBackToHome = () => navigate('/home')
+
   return (
     <Container>
+      <NavWrapper onClick={handleBackToHome}>
+        <BiArrowBack /> <span>Back to Home</span>
+      </NavWrapper>
+
       {bookings.map((booking) => (
         <BookingCard
           key={booking.id}

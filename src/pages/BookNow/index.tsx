@@ -5,9 +5,10 @@ import { AddGuest, Button } from '../../components'
 import PagehigherOrderComponent from '../../components/PagehigherOrderComponent'
 import daysCounter from '../../helper/daysCounter'
 import { useApp } from '../../hooks/appContext'
-import { Container, GuestWrapper } from './styles'
+import { Container, GuestWrapper, NavWrapper } from './styles'
 import uuid from 'react-uuid'
 import dateRangeList from '../../helper/dateRangeList'
+import { BiArrowBack } from 'react-icons/bi'
 
 const BookNowPage = () => {
   const [startDate, setStartDate] = useState<Date>(new Date())
@@ -69,8 +70,14 @@ const BookNowPage = () => {
     navigate('/myBooking')
   }
 
+  const handleBackToHome = () => navigate(-1)
+
   return (
     <Container>
+      <NavWrapper onClick={handleBackToHome}>
+        <BiArrowBack /> <span>Back</span>
+      </NavWrapper>
+
       <h2>Select Date</h2>
 
       <DateRangePicker

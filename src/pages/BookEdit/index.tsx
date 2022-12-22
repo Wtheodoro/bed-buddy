@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { DateRangePicker, RangeKeyDict } from 'react-date-range'
+import { BiArrowBack } from 'react-icons/bi'
 import { useNavigate, useParams } from 'react-router-dom'
 import { AddGuest, Button } from '../../components'
 import PagehigherOrderComponent from '../../components/PagehigherOrderComponent'
+import dateRangeList from '../../helper/dateRangeList'
 import daysCounter from '../../helper/daysCounter'
 import { useApp } from '../../hooks/appContext'
-import { Container, GuestWrapper } from './styles'
+import { Container, GuestWrapper, NavWrapper } from './styles'
 
 const BookEditPage = () => {
   const [startDate, setStartDate] = useState<Date>(new Date())
@@ -54,6 +56,19 @@ const BookEditPage = () => {
 
   const days = daysCounter(startDate, endDate)
 
+  const bookedDatesById = bookings.map(({ id, startDate, endDate }) => ({
+    id,
+    dateRangeList: dateRangeList(new Date(startDate), new Date(endDate)),
+  }))
+
+  const blockedDatesById = bookedDatesById.filter(
+    (bookedkedDateById) => bookedkedDateById.id !== currentBooking.id
+  )
+
+  const blockedDatesList = blockedDatesById
+    .map(({ dateRangeList }) => dateRangeList)
+    .flat(1)
+
   const handleClick = () => {
     const newBooking = {
       ...currentBooking,
@@ -66,8 +81,14 @@ const BookEditPage = () => {
     navigate('/myBooking')
   }
 
+  const handleBackToHome = () => navigate(-1)
+
   return (
     <Container>
+      <NavWrapper onClick={handleBackToHome}>
+        <BiArrowBack /> <span>Back</span>
+      </NavWrapper>
+
       <h2>Edit Date</h2>
 
       <DateRangePicker
@@ -76,6 +97,7 @@ const BookEditPage = () => {
         rangeColors={['#fd5861']}
         onChange={handleSelect}
         moveRangeOnFirstSelection={false}
+        disabledDates={blockedDatesList}
       />
 
       <GuestWrapper>

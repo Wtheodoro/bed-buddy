@@ -149,6 +149,7 @@ export const NavWrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 
   span {
     font-weight: 700;

@@ -25,3 +25,22 @@ export const GuestWrapper = styled.div`
     margin-bottom: 20px;
   }
 `
+
+export const NavWrapper = styled.section`
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+
+  span {
+    font-weight: 700;
+    font-size: 24px;
+  }
+
+  svg {
+    width: 28px;
+    height: 28px;
+    margin-right: 20px;
+  }
+`
