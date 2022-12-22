@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { DateRangePicker, RangeKeyDict } from 'react-date-range'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { AddGuest, Button } from '../../components'
 import PagehigherOrderComponent from '../../components/PagehigherOrderComponent'
 import daysCounter from '../../helper/daysCounter'
@@ -14,7 +14,8 @@ const BookNowPage = () => {
   const [numberOfGuests, setNumberOfGuests] = useState(2)
 
   const params = useParams()
-  const { places } = useApp()
+  const navigate = useNavigate()
+  const { places, addBooking } = useApp()
 
   const selectionRange = {
     startDate,
@@ -50,11 +51,13 @@ const BookNowPage = () => {
       id: uuid(),
       placeId: currentPlace.id,
       placeName: currentPlace.name,
+      guests: numberOfGuests,
       startDate,
       endDate,
     }
 
-    console.log(newBooking)
+    addBooking(newBooking)
+    navigate('/myBooking')
   }
 
   return (
