@@ -15,6 +15,7 @@ export const Container = styled.div<IContainer>`
   background-size: cover;
   overflow: hidden;
   color: white;
+  cursor: pointer;
 `
 
 export const InfoWrapper = styled.div`

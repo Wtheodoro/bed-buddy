@@ -21,4 +21,5 @@ export const GuestButton = styled.button`
   background: #e8f8ef;
   border-radius: 12px;
   font-size: 18px;
+  cursor: pointer;
 `
