@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 
 interface IContainer {
   size: 'small' | 'big'
+  color: 'green' | 'red'
 }
 
 const ButtonModifier = {
@@ -15,9 +16,17 @@ const ButtonModifier = {
   `,
 }
 
+const BackgroundModifier = {
+  green: css`
+    background: #1ab65c;
+  `,
+  red: css`
+    background: #f86666;
+  `,
+}
+
 export const Container = styled.button<IContainer>`
   border: none;
-  background: #1ab65c;
   color: white;
   font-weight: bold;
   border-radius: 28px;
@@ -25,4 +34,5 @@ export const Container = styled.button<IContainer>`
   cursor: pointer;
 
   ${(props) => ButtonModifier[props.size]}
+  ${(props) => BackgroundModifier[props.color]}
 `

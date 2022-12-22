@@ -5,11 +5,17 @@ interface IButton {
   children: string
   onClick: () => void
   size?: 'small' | 'big'
+  color?: 'green' | 'red'
 }
 
-const Button: React.FC<IButton> = ({ children, onClick, size = 'big' }) => {
+const Button: React.FC<IButton> = ({
+  children,
+  onClick,
+  size = 'big',
+  color = 'green',
+}) => {
   return (
-    <Container onClick={onClick} size={size}>
+    <Container onClick={onClick} size={size} color={color}>
       {children}
     </Container>
   )
