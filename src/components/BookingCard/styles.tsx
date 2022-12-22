@@ -22,6 +22,7 @@ export const Container = styled.div`
   > div:first-child {
     padding-bottom: 20px;
     border-bottom: 1px solid #bfbfbf;
+    cursor: pointer;
   }
 `
 

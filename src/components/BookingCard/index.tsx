@@ -18,6 +18,7 @@ interface IBookingCard {
   startDate: Date
   endDate: Date
   onCancel: () => void
+  onEdit: () => void
   onView: () => void
 }
 
@@ -29,6 +30,7 @@ const BookingCard: React.FC<IBookingCard> = ({
   startDate,
   endDate,
   onCancel,
+  onEdit,
   onView,
 }) => {
   const [showHiddenButtons, setShowHiddenButtons] = useState<boolean>(false)
@@ -38,14 +40,13 @@ const BookingCard: React.FC<IBookingCard> = ({
   const dateRange = dateRangeFormat(startDate, endDate)
   return (
     <Container>
-      <div>
+      <div onClick={onView}>
         <img src={coverImageUrl} alt='cover' />
 
         <InfoWrapper>
           <h3>{name}</h3>
           <p>{location}</p>
           <p>{dateRange}</p>
-          <StarRate rate={rate} />
         </InfoWrapper>
       </div>
 
@@ -54,8 +55,8 @@ const BookingCard: React.FC<IBookingCard> = ({
           <Button onClick={toggleHiddenButtons} size='small' color='red'>
             Cancel
           </Button>
-          <Button onClick={onView} size='small'>
-            View
+          <Button onClick={onEdit} size='small'>
+            Edit
           </Button>
         </InitialButtonWrapper>
 

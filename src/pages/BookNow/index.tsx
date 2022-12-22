@@ -52,8 +52,11 @@ const BookNowPage = () => {
       placeId: currentPlace.id,
       placeName: currentPlace.name,
       guests: numberOfGuests,
+      location: currentPlace.location,
       startDate,
       endDate,
+      coverImageUrl: currentPlace.backgroundImageUrl,
+      rate: currentPlace.rate,
     }
 
     addBooking(newBooking)
