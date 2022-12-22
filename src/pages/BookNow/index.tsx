@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { DateRangePicker, RangeKeyDict } from 'react-date-range'
 import { useNavigate, useParams } from 'react-router-dom'
 import { AddGuest, Button } from '../../components'
@@ -9,6 +9,7 @@ import { Container, GuestWrapper, NavWrapper } from './styles'
 import uuid from 'react-uuid'
 import dateRangeList from '../../helper/dateRangeList'
 import { BiArrowBack } from 'react-icons/bi'
+import dateNextAvailable from '../../helper/dateNextAvailable'
 
 const BookNowPage = () => {
   const [startDate, setStartDate] = useState<Date>(new Date())
@@ -71,6 +72,12 @@ const BookNowPage = () => {
   }
 
   const handleBackToHome = () => navigate(-1)
+
+  useEffect(() => {
+    const initialDate = dateNextAvailable(bookedDates)
+    setStartDate(initialDate)
+    setEndDate(initialDate)
+  }, [])
 
   return (
     <Container>
