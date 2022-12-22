@@ -19,7 +19,7 @@ const dateNextAvailable = (bookedDates: any[]) => {
   )
 }
 
-const dateFormat = (date: Date) => {
+export const dateFormat = (date: Date) => {
   return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
 }
 

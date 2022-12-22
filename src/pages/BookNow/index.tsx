@@ -10,6 +10,7 @@ import uuid from 'react-uuid'
 import dateRangeList from '../../helper/dateRangeList'
 import { BiArrowBack } from 'react-icons/bi'
 import dateNextAvailable from '../../helper/dateNextAvailable'
+import customDayContent from '../../helper/dateRangeMark'
 
 const BookNowPage = () => {
   const [startDate, setStartDate] = useState<Date>(new Date())
@@ -94,7 +95,10 @@ const BookNowPage = () => {
         onChange={handleSelect}
         moveRangeOnFirstSelection={false}
         disabledDates={bookedDates}
+        dayContentRenderer={(param) => customDayContent(param, bookedDates)}
       />
+
+      {!!bookings.length && <p>Days marked in Orange ar already booked</p>}
 
       <GuestWrapper>
         <h2>Guests</h2>

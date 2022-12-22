@@ -5,6 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { AddGuest, Button } from '../../components'
 import PagehigherOrderComponent from '../../components/PagehigherOrderComponent'
 import dateRangeList from '../../helper/dateRangeList'
+import customDayContent from '../../helper/dateRangeMark'
 import daysCounter from '../../helper/daysCounter'
 import { useApp } from '../../hooks/appContext'
 import { Container, GuestWrapper, NavWrapper } from './styles'
@@ -98,6 +99,9 @@ const BookEditPage = () => {
         onChange={handleSelect}
         moveRangeOnFirstSelection={false}
         disabledDates={blockedDatesList}
+        dayContentRenderer={(param) =>
+          customDayContent(param, blockedDatesList)
+        }
       />
 
       <GuestWrapper>
